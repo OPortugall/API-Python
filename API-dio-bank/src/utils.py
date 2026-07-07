@@ -1,7 +1,9 @@
-from flask_jwt_extended import get_jwt_identity
-from src.app import User, db
-from http import HTTPStatus
 from functools import wraps
+from http import HTTPStatus
+
+from flask_jwt_extended import get_jwt_identity
+from src.models import User, db
+
 
 def requires_role(role_name):
     def decorator(f):
